@@ -1,0 +1,8 @@
+42
+3.14159
+e2a1b3c4d5f6
+The quick brown fox jumps over the lazy dog.
+2024-06-01T12:34:56Z
+!@#$%^&*()_+-=[]{}|;':",.<>/?~
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+0xDEADBEEF

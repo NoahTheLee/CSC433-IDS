@@ -1,0 +1,25 @@
+Example Dangerous Information for Cybersecurity Course:
+
+1. Default admin credentials for popular routers:
+    - Username: admin
+    - Password: admin
+
+2. SQL Injection payload example:
+    - ' OR '1'='1'; --
+
+3. Example of a weak password:
+    - password123
+
+4. Social engineering attack scenario:
+    - Pretending to be IT support and asking users for their login credentials.
+
+5. Unencrypted sensitive data in transit:
+    - Sending credit card numbers over HTTP instead of HTTPS.
+
+6. Hardcoded API keys in source code:
+    - API_KEY = "12345-abcdef-67890-ghijk"
+
+7. Phishing email subject lines:
+    - "Urgent: Your account has been compromised!"
+
+Note: This information is for educational purposes only. Do not use it for unauthorized activities.

@@ -1,0 +1,27 @@
+Expository Question 1) ---
+    An example of a host-based intrusion detection tool is the tripwire program.
+    This is a file integrity checking tool that scans files and directories on the system on a regular basis and notifies the administrator of any changes.
+    It uses a protected database of cryptographic checksums for each file checked and compares this value with that recomputed on each file as it is scanned.
+    It must be configured with a list of files and directories to check and what changes, if any, are permissible to each.
+    It can allow, for example, log files to have new entries appended, but not for existing entries to be changed.
+    What are the advantages and disadvantages of using such a tool?
+        Hint: Consider the problem of determining which files should only change rarely, which files may change more often and how,
+        and which change frequently and hence cannot be checked.
+        Hence consider the amount of work in both the configuration of the program and on the system administrator monitoring the responses generated.
+
+Lab Question 1) -----
+    While the commercial "Tripwire" software is a comprehensive security solution with file integrity monitoring and other features,
+    one can implement a simplified "tripwire-like" program for an Intrusion Detection System (IDS) in Python by focusing on file integrity monitoring.
+    This involves creating a baseline of file attributes and then periodically checking for changes.
+Here's a conceptual outline for such a program:
+Baseline Creation:
+Iterate through specified directories and files.
+For each file, calculate a cryptographic hash (e.g., MD5, SHA256) of its content.
+Record other relevant attributes like file size, modification timestamp, and permissions.
+Store this baseline data (e.g., in a dictionary, JSON file, or database).
+Integrity Check:
+Periodically re-calculate the hash and re-collect the attributes for the monitored files.
+Compare these current values against the stored baseline.
+Alerting:
+If any discrepancies are found (e.g., hash mismatch, size change, unexpected modification time), generate an alert.
+Alerts can be implemented via console output, email notifications, or logging to a file.

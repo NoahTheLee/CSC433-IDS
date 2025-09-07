@@ -1,0 +1,18 @@
+/Users/noah/Desktop/CBU Stuff/FA25/CSC433 CSIRAR/Homework/HW1/Example Dir/dangerous_stuff.txt
+d820915b0dc4a5219322183a6563d7d67ee08a7f827e7f8b977c5d2ae1482587
+
+/Users/noah/Desktop/CBU Stuff/FA25/CSC433 CSIRAR/Homework/HW1/Example Dir/important_file.txt
+97a0a7cf0565c842fda2396f28bf690cb97379a9293517dd3778c4c8b0758a31
+
+/Users/noah/Desktop/CBU Stuff/FA25/CSC433 CSIRAR/Homework/HW1/Example Dir/subdir/sensitive_data.txt
+7063aa837337ad270130b06f0956cc7ef5cde272d1e6799c0b2e2d0d11150015
+
+/Users/noah/Desktop/CBU Stuff/FA25/CSC433 CSIRAR/Homework/HW1/Example Dir/subdir/admin_keys.txt
+d269aa35b427db337c2124d81c9ea8176a1eeec744bb6d594bf848f22b1735e9
+
+/Users/noah/Desktop/CBU Stuff/FA25/CSC433 CSIRAR/Homework/HW1/Example Dir/subdir/subsub dir/directors_chicken_recipe.txt
+9d4b5bef3c7c2fac82592bd9a6f51c50f52f9c6b090cc78d1ddce22cb1f90a86
+
+/Users/noah/Desktop/CBU Stuff/FA25/CSC433 CSIRAR/Homework/HW1/Second Example Dir/misc_file.txt
+1b676719192c049bdee3e553e7949bfcd5a6319632a66292fe7a7632609d88e7
+

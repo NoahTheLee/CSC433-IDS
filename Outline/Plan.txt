@@ -1,0 +1,8 @@
+Define paths to monitor
+Iterate over files
+    Gather hashes
+    Compose sha map
+Reiterate over files
+    Get hashes
+    Compare hashes
+    Alert if changed
