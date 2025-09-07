@@ -59,6 +59,8 @@ public class IDS {
                 String filePath = lines[0].trim();
                 String storedHash = lines[1].trim();
 
+                //TODO: Item 1 - Alert user when detections are made - done?
+                //TODO: Item 2 - Record detections to a log file
                 File file = new File(filePath);
                 if (!file.exists() || !file.isFile()) {
                     System.out.println("File missing: " + filePath);
@@ -152,6 +154,7 @@ public class IDS {
     public static String fileToHex(String path) {
         MessageDigest digest;
         try {
+            //TODO: Item 4 - Change to SHA384
             digest = MessageDigest.getInstance("SHA-256");
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("SHA-256 algorithm not found: ", e);
