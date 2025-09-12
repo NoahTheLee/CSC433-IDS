@@ -33,6 +33,8 @@ public class IDS {
         // Create checksum file and populate it with paths and SHA256 checksums
         makeChecksum(paths);
 
+        String logFile = "LOG-" + java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + ".txt";
+
         // Start iterating over the files
         while (true) {
             try {
@@ -51,6 +53,16 @@ public class IDS {
 
             boolean discrepancyFound = false;
 
+            // Helper method to write log entries
+            java.util.function.BiConsumer<String, String> writeLog = (level, message) -> {
+                String timestamp = java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+                try (FileWriter logWriter = new FileWriter(logFile, true)) {
+                    logWriter.write(timestamp + " " + level + ": " + message + "\n");
+                } catch (IOException e) {
+                    System.err.println("Failed to write to log file: " + e.getMessage());
+                }
+            };
+
             for (String entry : entries) {
                 String[] lines = entry.split("\n");
                 if (lines.length < 2) {
@@ -59,24 +71,28 @@ public class IDS {
                 String filePath = lines[0].trim();
                 String storedHash = lines[1].trim();
 
-                //TODO: Item 1 - Alert user when detections are made - done?
-                //TODO: Item 2 - Record detections to a log file
                 File file = new File(filePath);
                 if (!file.exists() || !file.isFile()) {
-                    System.out.println("File missing: " + filePath);
+                    String msg = "File missing: " + filePath;
+                    System.out.println(msg);
+                    writeLog.accept("WARN", msg);
                     discrepancyFound = true;
                     continue;
                 }
 
                 String currentHash = fileToHex(filePath);
                 if (!currentHash.equals(storedHash)) {
-                    System.out.println("File modified: " + filePath);
+                    String msg = "File modified: " + filePath;
+                    System.out.println(msg);
+                    writeLog.accept("WARN", msg);
                     discrepancyFound = true;
                 }
             }
 
             if (!discrepancyFound) {
-                System.out.println("No discrepancies found.");
+                String msg = "No discrepancies found.";
+                System.out.println(msg);
+                writeLog.accept("LOG", msg);
             }
         }
         // If a discrepancy is found, alert
@@ -154,10 +170,11 @@ public class IDS {
     public static String fileToHex(String path) {
         MessageDigest digest;
         try {
-            //TODO: Item 4 - Change to SHA384
-            digest = MessageDigest.getInstance("SHA-256");
+            //Item 4: Change to SHA384. DONE
+            //that was easy...
+            digest = MessageDigest.getInstance("SHA-384");
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("SHA-256 algorithm not found: ", e);
+            throw new RuntimeException("SHA-384 algorithm not found: ", e);
         }
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
