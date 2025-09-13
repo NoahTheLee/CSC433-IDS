@@ -1,0 +1,7 @@
+One advantage to using a tripwire program is the ease of being able to detect whenever a change happens to a file system or its contents, as is simply described in the question itself.
+The advantages here, simply enough, are being able to determine when, and more importantly if, a file is changed or modified in the host system.
+This would allow review of updates, a particularly useful tool if tampering or unauthorized access is suspected, particularly if an ability to determine from where the access originated.
+
+Possible disadvantages of such a system would be, particularly if the machine that handles the log also contains the file that are being monitored.
+For example, if the tripwire program can be modified, changes could be hidden by entirely deleting or modifying the log file itself, particularly if the log file is not monitored for changes.
+A simple solution to this would be to have the system handling the logging not contain the same files that are being monitored, a type of remote monitoring - such as Over The Wire - could be used to remedy this issue.
